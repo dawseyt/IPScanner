@@ -284,7 +284,7 @@ function List-Machines {
 	# Get Vendor via Mac (thanks to u/mprz) - optional online lookup
 	if ($global:EnableOnlineVendorLookup) {
 		$ProgressPreference = 'SilentlyContinue'
-		$tryMyVendor = (irm "https://www.macvendorlookup.com/api/v2/$($myMac.Replace(':','').Substring(0,6))" -Method Get).Company
+		$tryMyVendor = (Invoke-RestMethod "https://www.macvendorlookup.com/api/v2/$($myMac.Replace(':','').Substring(0,6))" -Method Get).Company
 		$ProgressPreference = 'Continue'
 		$myVendor = if($tryMyVendor){$tryMyVendor.substring(0, [System.Math]::Min(35, $tryMyVendor.Length))} else {'Unable to Identify'}
 	} else {
@@ -2611,7 +2611,7 @@ $btnMinimize.Add_MouseEnter({
 	$btnMinimize.Background='#BBBBBB'
 })
 $btnMinimize.Add_MouseLeave({
-	$btnMinimize.Background='#DDDDDD'
+	$btnMinimize.Background='Transparent'
 })
 
 $btnClose.Add_Click({
@@ -2622,7 +2622,7 @@ $btnClose.Add_MouseEnter({
 	$btnClose.Background='#ff0000'
 })
 $btnClose.Add_MouseLeave({
-	$btnClose.Background='#DDDDDD'
+	$btnClose.Background='Transparent'
 })
 
 $Main.Add_MouseLeftButtonDown({

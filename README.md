@@ -6,7 +6,7 @@
 [![PowerShell Gallery](https://img.shields.io/powershellgallery/v/IPScanner.svg)](https://www.powershellgallery.com/packages/IPScanner)
 
 </div>
-<p align="center"><sup>Primary entrypoint: <code>IPScanner.ps1</code> (pure PowerShell).<br>
+<p align="center"><sup>Primary entry point: <code>IPScanner.ps1</code> (pure PowerShell).<br>
 Optional convenience launcher: <code>IPScanner.cmd</code> (calls <code>-File IPScanner.ps1</code> explicitly).</sup></p><br>
 
 <p align="center">A lightweight, fast, network scanner, for use with basic networks.  Get an up to date list of peer: MAC Address, Vendor, IP Address, and Hostnames - 
