@@ -1878,8 +1878,8 @@ Add-Type -TypeDefinition $getIcons -ReferencedAssemblies System.Windows.Forms, S
 					</ListView>
 					<TextBlock Name="NetMonTotalConnections" Foreground="{x:Static SystemColors.GrayTextBrush}" FontWeight="Normal" FontSize="11" Margin="0,263,0,0" HorizontalAlignment="Center" Grid.Row="2"/>
 				</Grid>
-				<Canvas Name="PopupCanvas2" Background="#222222" Visibility="Hidden" Width="330" Height="220" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,40,0,0" Panel.ZIndex="10">
-					<Border Name="PopupBorder2" Width="330" Height="220" BorderThickness="0.70" CornerRadius="5" Background="#222222" Opacity="0.95">
+				<Canvas Name="PopupCanvas2" Background="#222222" Visibility="Hidden" Width="330" Height="280" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,40,0,0" Panel.ZIndex="10">
+					<Border Name="PopupBorder2" Width="330" Height="280" BorderThickness="0.70" CornerRadius="5" Background="#222222" Opacity="0.95">
 						<Border.BorderBrush>
 							<SolidColorBrush Color="#CCCCCC"/>
 						</Border.BorderBrush>
