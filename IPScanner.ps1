@@ -284,7 +284,11 @@ function List-Machines {
 	# Get Vendor via Mac (thanks to u/mprz) - optional online lookup
 	if ($global:EnableOnlineVendorLookup) {
 		$ProgressPreference = 'SilentlyContinue'
-		$tryMyVendor = (Invoke-RestMethod "https://www.macvendorlookup.com/api/v2/$($myMac.Replace(':','').Substring(0,6))" -Method Get).Company
+		try {
+			$tryMyVendor = (Invoke-RestMethod "https://www.macvendorlookup.com/api/v2/$($myMac.Replace(':','').Substring(0,6))" -Method Get -ErrorAction Stop).Company
+		} catch {
+			$tryMyVendor = $null
+		}
 		$ProgressPreference = 'Continue'
 		$myVendor = if($tryMyVendor){$tryMyVendor.substring(0, [System.Math]::Min(35, $tryMyVendor.Length))} else {'Unable to Identify'}
 	} else {
