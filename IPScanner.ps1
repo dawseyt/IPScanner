@@ -1579,7 +1579,7 @@ Add-Type -TypeDefinition $getIcons -ReferencedAssemblies System.Windows.Forms, S
 							<CheckBox Name="VendorLookupToggle" Content="MAC Vendor (online)" Foreground="#D0D0D0" IsChecked="False"/>
 						</StackPanel>
 					</Grid>
-					<ListView Name="listView" Background="#1F2330" FontWeight="Normal" HorizontalAlignment="Left" Height="400" Margin="19,52,-140,0" VerticalAlignment="Top" Width="860" VerticalContentAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.CanContentScroll="False" AlternationCount="2">
+					<ListView Name="listView" Background="#1F2330" FontWeight="Normal" HorizontalAlignment="Left" Height="382" Margin="19,70,-140,0" VerticalAlignment="Top" Width="860" VerticalContentAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.CanContentScroll="False" AlternationCount="2">
 						<ListView.ItemContainerStyle>
 							<Style TargetType="{x:Type ListViewItem}">
 								<Setter Property="Background" Value="Transparent" />
