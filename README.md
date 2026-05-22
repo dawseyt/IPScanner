@@ -6,8 +6,8 @@
 [![PowerShell Gallery](https://img.shields.io/powershellgallery/v/IPScanner.svg)](https://www.powershellgallery.com/packages/IPScanner)
 
 </div>
-<p align="center"><sup>This script will work as either a .CMD or .PS1 file.<br>
-(For ease of use it will be posted as a CMD file, as you can simply Double-Click it to launch)</sup></p><br>
+<p align="center"><sup>Primary entry point: <code>IPScanner.ps1</code> (pure PowerShell).<br>
+Optional convenience launcher: <code>IPScanner.cmd</code> (calls <code>-File IPScanner.ps1</code> explicitly).</sup></p><br>
 
 <p align="center">A lightweight, fast, network scanner, for use with basic networks.  Get an up to date list of peer: MAC Address, Vendor, IP Address, and Hostnames - 
 External IP Address and Domain are also displayed in the titlebar after initiating a scan, and a
@@ -36,3 +36,22 @@ simple connection monitor can show you current bandwidth usage and active port c
 To clear the cached network peer list (ARP Cache), **hold the \[CTRL\] key**. The Scan button will change.<br>
 <sup>**(Note: Clearing network peer cache requires Admin rights, while normal scanning/usage does not.)**</sup><br>
 <p align="center"><img src="https://github.com/illsk1lls/IPScanner/blob/main/.readme/ClearARP.png?raw=true"></p>
+
+## Run
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\IPScanner.ps1
+```
+
+Optional flags:
+
+- `-EnableExternalLookup` (external IP via internet service)
+- `-EnableVendorLookup` (MAC vendor lookup via internet service)
+- `-HideConsole` (optional; disabled by default)
+
+## Privacy / Network behavior
+
+- Local subnet scanning and monitor features are available by default.
+- Internet lookups are **off by default** and clearly user-controlled (startup flags + in-app toggles).
+- No in-memory `iex ([io.file]::ReadAllText(...))` launcher pattern.
+- No automatic firewall or registry modification behavior in the main launcher flow.
